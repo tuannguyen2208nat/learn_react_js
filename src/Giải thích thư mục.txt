@@ -1,0 +1,9 @@
+Assets : lưu trữ hình ảnh / audio mà muốn public 
+Components : share soure code / code tái sử dụng được
+Routes : định nghĩa các Routes
+Services : chứa API
+Store : 
+Style : viết SCSS
+Utils : chứa các function dùng chung
+Views : chứa Page
+
