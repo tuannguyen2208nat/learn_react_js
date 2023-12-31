@@ -1,9 +1,20 @@
 import React from 'react';
 
 class MyComponent1 extends React.Component {
+    state = {
+        name: 'Tuan',
+        page: 'NAT'
+    }
+
+    handleOnChangeName = (event) => {
+        this.setState({ name: event.target.value });
+    } //Cú pháp thay đổi state
+
     render() {
         return (
-            <div> Hello my component</div>
+            <input value={this.state.name} type="text"
+                onChange={(event) => this.handleOnChangeName(event)}
+            />
         );
     }
 }
@@ -16,7 +27,7 @@ class MyComponent2 extends React.Component {
     }
 
     handleClickButton = () => {
-        alert('Click me');
+        alert('Click');
     }
 
     render() {
