@@ -170,11 +170,23 @@ class ChildComponent5 extends React.Component {
         console.log('check props: ', this.props)
         // let name = this.props.name;
         // let age = this.props.age;
-        let { name, age } = this.props;
+        let { name, age, address, arrJob } = this.props;
         return (
             <>
                 <div className='first'>
-                    Child component name : {name} - {age}
+                    Child component name : {name} - {age} - {address}
+                </div>
+
+                <div className='arrJob'>
+                    {
+                        arrJob.map((item, index) => {
+                            return (
+                                <div key={item.id}>
+                                    {item.id} - {item.title}
+                                </div>
+                            );
+                        })
+                    }
                 </div>
             </>
         );

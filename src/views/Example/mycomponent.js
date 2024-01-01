@@ -109,12 +109,53 @@ class MyComponent4 extends React.Component {
 }
 
 class MyComponent5 extends React.Component {
+    state = {
+        name: '',
+        age: '',
+        address: '',
+        arrJob: [
+            { id: 'abc001', title: 'Dev' },
+            { id: 'abc002', title: 'Tester' },
+            { id: 'abc003', title: 'Tester' }
+        ]
+    }
+    handleChangeName = (event) => {
+        this.setState({ name: event.target.value })
+    }
+    handleChangeAge = (event) => {
+        this.setState({ age: event.target.value })
+    }
+    handleChangeAddress = (event) => {
+        this.setState({ address: event.target.value })
+    }
+
     render() {
         return (
             <>
+                <form action="/action_page.php">
+                    <label htmlFor="fname">Name:</label><br />
+                    <input type="text"
+                        value={this.state.name}
+                        onChange={(event) => this.handleChangeName(event)}
+                    />
+                    <br />
+                    <label htmlFor="lname">Age</label><br />
+                    <input type="text"
+                        value={this.state.age}
+                        onChange={(event) => this.handleChangeAge(event)}
+                    />
+                    <br />
+                    <label htmlFor="lname">Address</label><br />
+                    <input type="text"
+                        value={this.state.address}
+                        onChange={(event) => this.handleChangeAddress(event)}
+                    />
+                </form>
                 <ChildComponent5
-                    name={'Tuấn'}
-                    age={'22'}
+                    name={this.state.name}
+                    age={this.state.age}
+                    address={this.state.address}
+                    arrJob={this.state.arrJob}
                 />
             </>
         );
