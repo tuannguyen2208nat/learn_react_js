@@ -193,4 +193,51 @@ class ChildComponent5 extends React.Component {
     }
 }
 
-export { ChildComponent1, ChildComponent2, ChildComponent3, ChildComponent4, ChildComponent5 };
+const ChildComponent6 = () => {
+    return (
+        <div>
+            Hello
+        </div>
+    )
+}
+
+class ChildComponent7 extends React.Component {
+    state = {
+        show: false
+    }
+    handleClickButton = () => {
+        this.setState({
+            show: !this.state.show
+        })
+    }
+    render() {
+        let { show } = this.state;
+
+        if (!show) {
+            return (
+                <>
+                    <div>
+                        Click it
+                    </div>
+                    <div>
+                        <button onClick={() => this.handleClickButton()}>Show</button>
+                    </div>
+                </>
+            );
+        }
+        else {
+            return (
+                <>
+                    <div>
+                        Hello
+                    </div>
+                    <div>
+                        <button onClick={() => this.handleClickButton()}>Hide</button>
+                    </div>
+                </>
+            );
+        }
+    }
+}
+
+export { ChildComponent1, ChildComponent2, ChildComponent3, ChildComponent4, ChildComponent5, ChildComponent6, ChildComponent7 };
