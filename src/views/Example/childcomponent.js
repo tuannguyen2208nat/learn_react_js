@@ -165,4 +165,20 @@ class ChildComponent4 extends React.Component {
     }
 }
 
-export { ChildComponent1, ChildComponent2, ChildComponent3, ChildComponent4 };
+class ChildComponent5 extends React.Component {
+    render() {
+        console.log('check props: ', this.props)
+        // let name = this.props.name;
+        // let age = this.props.age;
+        let { name, age } = this.props;
+        return (
+            <>
+                <div className='first'>
+                    Child component name : {name} - {age}
+                </div>
+            </>
+        );
+    }
+}
+
+export { ChildComponent1, ChildComponent2, ChildComponent3, ChildComponent4, ChildComponent5 };

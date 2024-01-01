@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChildComponent3, ChildComponent4 } from './childcomponent';
+import { ChildComponent3, ChildComponent4, ChildComponent5 } from './childcomponent';
 
 class MyComponent1 extends React.Component {
 
@@ -107,4 +107,19 @@ class MyComponent4 extends React.Component {
         );
     }
 }
-export { MyComponent1, MyComponent2, MyComponent3, MyComponent4 };
+
+class MyComponent5 extends React.Component {
+    render() {
+        return (
+            <>
+                <ChildComponent5
+                    name={'Tuấn'}
+                    age={'22'}
+                />
+            </>
+        );
+    }
+}
+
+
+export { MyComponent1, MyComponent2, MyComponent3, MyComponent4, MyComponent5 };
