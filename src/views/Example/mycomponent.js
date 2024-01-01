@@ -1,4 +1,5 @@
 import React from 'react';
+import { ChildComponent3, ChildComponent4 } from './childcomponent';
 
 class MyComponent1 extends React.Component {
 
@@ -90,34 +91,20 @@ class MyComponent3 extends React.Component {
     render() {
         return (
             <>
-                <div className='first'>
-                    Hello world
-                </div>
-                <div className='second'>
-                    <br />
-                    <form action="/action_page.php">
-                        <label htmlFor="fname">First name:</label><br />
-                        <input type="text"
-                            value={this.state.firstName}
-                            onChange={(event) => this.handleChangeFirstName(event)}
-                        />
-                        <br />
-                        <label htmlFor="lname">Last name:</label><br />
-                        <input type="text"
-                            value={this.state.lastName}
-                            onChange={(event) => this.handleChangeLastName(event)}
-                        />
-                        <br />
-                        <input type="submit"
-                            value="Submit"
-                            onClick={(event) => this.handleSummit(event)}
-                        />
-                    </form>
-                </div>
-
+                <ChildComponent3 />
             </>
         );
     }
 }
 
-export { MyComponent1, MyComponent2, MyComponent3 };
+class MyComponent4 extends React.Component {
+
+    render() {
+        return (
+            <>
+                <ChildComponent4 />
+            </>
+        );
+    }
+}
+export { MyComponent1, MyComponent2, MyComponent3, MyComponent4 };
