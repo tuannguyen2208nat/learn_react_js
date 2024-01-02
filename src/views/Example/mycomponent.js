@@ -195,6 +195,14 @@ class MyComponent8 extends React.Component {
             arrJob: [...this.state.arrJob, job]
         })
     }
+
+    deleteaJob = (job) => {
+        let currenjob = this.state.arrJob;
+        currenjob = currenjob.filter(item => item.title !== job.title)
+        this.setState({
+            arrJob: currenjob
+        })
+    }
     render() {
         return (
             <>
@@ -203,6 +211,7 @@ class MyComponent8 extends React.Component {
                 />
                 <ChildComponent8
                     arrJob={this.state.arrJob}
+                    deleteaJob={this.deleteaJob}
                 />
             </>
         );

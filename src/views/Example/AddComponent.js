@@ -42,7 +42,7 @@ class AddComponents extends React.Component {
                             onChange={(event) => this.handleChangeTitle(event)}
                         />
                         <br />
-                        <label htmlFor="lname">salary</label><br />
+                        <label htmlFor="lname">Salary</label><br />
                         <input type="text"
                             value={this.state.salary}
                             onChange={(event) => this.handleChangeSalary(event)}
@@ -60,3 +60,4 @@ class AddComponents extends React.Component {
     }
 }
 export default AddComponents;
+

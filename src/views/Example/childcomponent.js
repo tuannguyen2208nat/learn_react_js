@@ -244,11 +244,17 @@ class ChildComponent8 extends React.Component {
     state = {
         show: false
     }
+
     handleClickButton = () => {
         this.setState({
             show: !this.state.show
         })
     }
+    handleOnclickDelete = (job) => {
+        console.log('>>> HandleonClickDelete :', job)
+        this.props.deleteaJob(job)
+    }
+
     render() {
         let { arrJob } = this.props;
         let { show } = this.state;
@@ -257,9 +263,7 @@ class ChildComponent8 extends React.Component {
             return (
                 <>
                     <div>
-                        Click it
-                    </div>
-                    <div>
+                        <br />
                         <button onClick={() => this.handleClickButton()}>Show</button>
                     </div>
                 </>
@@ -268,20 +272,29 @@ class ChildComponent8 extends React.Component {
         else {
             return (
                 <>
+                    <div>
+                        <br />
+                        <button onClick={() => this.handleClickButton()}>Hide</button>
+                    </div>
                     <div className="ShowJob">
                         {
+
                             arrJob.map((item, index) => {
-                                return (
-                                    <div key={item.title}>
-                                        {item.title} - {item.salary}
-                                    </div>
-                                );
+                                if (index === 0) {
+                                    return null;
+                                }
+                                else {
+                                    return (
+                                        <div key={item.title}>
+                                            {item.title} - {item.salary}
+                                            <span onClick={() => this.handleOnclickDelete(item)}> X </span>
+                                        </div>
+                                    );
+                                }
+
                             })
                         }
 
-                    </div>
-                    <div>
-                        <button onClick={() => this.handleClickButton()}>Hide</button>
                     </div>
                 </>
             );
