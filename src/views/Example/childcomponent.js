@@ -1,4 +1,5 @@
 import React from 'react';
+import './Demo.scss'
 
 class ChildComponent1 extends React.Component {
 
@@ -264,7 +265,8 @@ class ChildComponent8 extends React.Component {
                 <>
                     <div>
                         <br />
-                        <button onClick={() => this.handleClickButton()}>Show</button>
+                        <button className="btn-show"
+                            onClick={() => this.handleClickButton()}>Show</button>
                     </div>
                 </>
             );
@@ -274,7 +276,9 @@ class ChildComponent8 extends React.Component {
                 <>
                     <div>
                         <br />
-                        <button onClick={() => this.handleClickButton()}>Hide</button>
+                        <button
+                            className="btn-hide"
+                            onClick={() => this.handleClickButton()}>Hide</button>
                     </div>
                     <div className="ShowJob">
                         {

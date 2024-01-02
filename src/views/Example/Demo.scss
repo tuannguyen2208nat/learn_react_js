@@ -1,0 +1,21 @@
+$myFont: 'Times New Roman', Times, serif;
+$mySize:17px;
+
+.btn-show {
+    color : green;
+    background-color:black;
+    font-family:$myFont; 
+    font-size: $mySize;
+}
+
+.btn-hide {
+    color : red;
+    background-color:black;
+    font-family:$myFont; 
+    font-size: $mySize;
+}
+
+div {
+    font-family:$myFont; 
+    font-size: $mySize;
+}

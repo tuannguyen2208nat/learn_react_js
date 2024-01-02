@@ -47,7 +47,7 @@ class AddComponents extends React.Component {
                             value={this.state.salary}
                             onChange={(event) => this.handleChangeSalary(event)}
                         />
-                        <br />
+                        <br /><br />
                         <input type="submit"
                             value="Submit"
                             onClick={(event) => this.handleSubmit(event)}
