@@ -1,5 +1,6 @@
 import React from 'react';
-import { ChildComponent3, ChildComponent4, ChildComponent5, ChildComponent6, ChildComponent7 } from './childcomponent';
+import { ChildComponent3, ChildComponent4, ChildComponent5, ChildComponent6, ChildComponent7, ChildComponent8 } from './childcomponent';
+import AddComponents from './AddComponent';
 
 class MyComponent1 extends React.Component {
 
@@ -181,4 +182,31 @@ const MyComponent7 = () => {
 
 }
 
-export { MyComponent1, MyComponent2, MyComponent3, MyComponent4, MyComponent5, MyComponent6, MyComponent7 };
+class MyComponent8 extends React.Component {
+    state = {
+        arrJob: [
+            { title: '', salary: '' }
+        ]
+    }
+
+    addNewJob = (job) => {
+        console.log('check job from parent: ', job)
+        this.setState({
+            arrJob: [...this.state.arrJob, job]
+        })
+    }
+    render() {
+        return (
+            <>
+                <AddComponents
+                    addNewJob={this.addNewJob}
+                />
+                <ChildComponent8
+                    arrJob={this.state.arrJob}
+                />
+            </>
+        );
+    }
+}
+
+export { MyComponent1, MyComponent2, MyComponent3, MyComponent4, MyComponent5, MyComponent6, MyComponent7, MyComponent8 }; 
