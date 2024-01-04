@@ -26,7 +26,6 @@ class Inputdata extends React.Component {
             })
             toast.success(`Succes`)
         }
-
     }
 
     render() {

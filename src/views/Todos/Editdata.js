@@ -12,9 +12,10 @@ class Editdata extends React.Component {
     }
 
     handleOnchaneEditTodo = (event) => {
-        let edittodoCopy = event.target
+        let { edittodo } = this.props
+        let edittodoCopy = edittodo
+        edittodoCopy.work = event.target.value
         this.props.handleeditTodo({ edittodoCopy })
-
     }
 
     render() {
