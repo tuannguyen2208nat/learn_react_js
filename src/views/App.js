@@ -5,10 +5,11 @@ import Listodo from './Todos/Listtodo';
 import Home from './Example/Home';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ListUser from './User/ListUser';
 
 import Nav from './Nav/Nav';
 
-import { BrowserRouter, Switch, Route, Link, } from 'react-router-dom/cjs/react-router-dom.min';
+import { BrowserRouter, Switch, Route } from 'react-router-dom/cjs/react-router-dom.min';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route path="/about">
               <MyComponent8 />
+            </Route>
+            <Route path="/user">
+              <ListUser />
             </Route>
           </Switch>
 
