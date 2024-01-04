@@ -6,10 +6,10 @@ import Home from './Example/Home';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ListUser from './User/ListUser';
-
+import DetailUser from './User/DetailUser';
 import Nav from './Nav/Nav';
 
-import { BrowserRouter, Switch, Route } from 'react-router-dom/cjs/react-router-dom.min';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -30,15 +30,18 @@ function App() {
             <Route path="/about">
               <MyComponent8 />
             </Route>
-            <Route path="/user">
+            <Route path="/user" exact>
               <ListUser />
+            </Route>
+            <Route path="/user/:id">
+              <DetailUser />
             </Route>
           </Switch>
 
         </header>
         <ToastContainer
           position="top-right"
-          autoClose={10}
+          autoClose={10000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick
