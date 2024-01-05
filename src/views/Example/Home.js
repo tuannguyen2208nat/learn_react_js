@@ -10,9 +10,17 @@ class Home extends React.Component {
     //         this.props.history.push('todo');
     //     }, 3000);
     // }
+    handleDeleteUser = (user) => {
+        console.log('user', user)
+        this.props.deleteUserRedux(user);
+    }
 
+    handleAddUser = () => {
+        this.props.addUserRedux();
+    }
     render() {
         console.log('>>>check props : ', this.props.dataRudx);
+        let listUser = this.props.dataRudx;
         return (
             <>
                 <div>
@@ -21,6 +29,21 @@ class Home extends React.Component {
                 <div>
                     <img src={logo} alt="Lil Nat Logo" style={{ width: '200px', height: '200px', marginTop: '20px' }} />
                 </div>
+                <div>
+                    {listUser && listUser.length > 0 &&
+                        listUser.map((item, index) => {
+                            return (
+                                <>
+                                    <div key={item.id}>
+                                        {index + 1} - {item.name}
+                                        &nbsp; <span onClick={() => this.handleDeleteUser(item)}>X</span>
+                                    </div>
+                                </>
+                            )
+                        })
+                    }
+                </div>
+                <button onClick={() => this.handleAddUser()}>Add New</button>
             </>
         );
     }
@@ -33,4 +56,11 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Color(Home));
+const mapDispatchToProps = (dispatch) => {
+    return {
+        deleteUserRedux: (userDelete) => dispatch({ type: 'DELETE_USER', payload: userDelete }),
+        addUserRedux: () => dispatch({ type: 'CREATE_USER' })
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Color(Home));
