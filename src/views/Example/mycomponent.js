@@ -86,7 +86,6 @@ class MyComponent3 extends React.Component {
     }
     handleSummit = (event) => {
         event.preventDefault();
-        console.log('>>> check input data : ', this.state)
     }
 
     render() {
@@ -190,7 +189,6 @@ class MyComponent8 extends React.Component {
     }
 
     addNewJob = (job) => {
-        console.log('check job from parent: ', job)
         this.setState({
             arrJob: [...this.state.arrJob, job]
         })

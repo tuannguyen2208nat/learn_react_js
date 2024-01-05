@@ -85,7 +85,6 @@ class ChildComponent3 extends React.Component {
     }
     handleSummit = (event) => {
         event.preventDefault();
-        console.log('>>> check input data : ', this.state)
         alert('Hello ' + this.state.firstName + ' ' + this.state.lastName)
     }
 
@@ -168,7 +167,6 @@ class ChildComponent4 extends React.Component {
 
 class ChildComponent5 extends React.Component {
     render() {
-        console.log('check props: ', this.props)
         // let name = this.props.name;
         // let age = this.props.age;
         let { name, age, address, arrJob } = this.props;

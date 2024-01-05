@@ -15,7 +15,6 @@ class AddComponents extends React.Component {
     }
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log('>>> check data : ', this.state)
         if (!this.state.title || !this.state.salary) {
             alert('Please input data')
             return;

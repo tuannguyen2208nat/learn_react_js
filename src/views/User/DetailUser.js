@@ -30,12 +30,13 @@ class DetailUser extends React.Component {
                 <div> Detail User with id {this.props.match.params.id}</div>
                 <div> User'name: {user.first_name} - {user.last_name}</div>
                 <div> User'mail: {user.email}</div>
-                <div> <img src={user.avatar} /> </div>
+                <div> <img src={user.avatar} alt={`${user.first_name} ${user.last_name}`} /> </div>
                 <div>
                     <button type="button" onClick={() => this.handleBackButton()}>BACK</button>
                 </div>
             </>
         );
     }
+
 }
 export default withRouter(DetailUser)
